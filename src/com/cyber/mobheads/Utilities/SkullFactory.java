@@ -6,7 +6,6 @@ import com.cyber.mobheads.Config.ConfigController;
 import com.cyber.mobheads.advancements.AdvancementsManager;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -44,7 +43,7 @@ public class SkullFactory{
 		ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1,(short)3);
 
 		SkullMeta meta = (SkullMeta)skull.getItemMeta();
-		GameProfile profile = new GameProfile(UUID.fromString(randomUUID), null);
+		GameProfile profile = new GameProfile(UUID.fromString(randomUUID), mobmeta.getMobName().name());
 		profile.getProperties().put("textures", new Property("textures", encodedTexture));
 		Field profileField = null;
 		try {

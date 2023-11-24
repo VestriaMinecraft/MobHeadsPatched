@@ -17,6 +17,11 @@ import java.lang.reflect.Field;
 public class SkullBreakListener implements Listener {
 	@EventHandler
 	public void onSkullDrop(ItemSpawnEvent event) {
+		// listener only seems important for changing names back - ignore?
+		if (true) {
+			return;
+		}
+
 		if (event.getEntity().getItemStack().getType() != Material.PLAYER_HEAD) {
 			return;
 		}
